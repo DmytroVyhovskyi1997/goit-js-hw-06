@@ -1,9 +1,7 @@
 let nameInput = document.getElementById("name-input");
 let nameOutput = document.getElementById("name-output");
-nameInput.oninput = function () {
-    if (nameInput.value === '') {
-       nameOutput.innerHTML = 'Anonymous';
-    } else{
-    nameOutput.innerHTML = nameInput.value;
-    }
-}
+nameInput.addEventListener('input', event =>{
+const value = event.target.value.trim();
+nameOutput.textContent = value ? value : 'Anonymous'
+
+})
